@@ -1,4 +1,5 @@
-/**
+/*
+*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information
@@ -72,8 +73,8 @@ public class ExternalServicesPropertiesReadPlatformServiceImpl implements Extern
             String username = null;
             String password = null;
             String host = null;
-            String port = "25";
-            boolean useTLS = false;
+            String port = "587";
+            boolean useTLS = true;
             String fromEmail = null;
             String fromName = null;
 
@@ -87,8 +88,6 @@ public class ExternalServicesPropertiesReadPlatformServiceImpl implements Extern
                     password = value;
                 } else if (ExternalServicesConstants.SMTP_HOST.equalsIgnoreCase(name)) {
                     host = value;
-                } else if (ExternalServicesConstants.SMTP_PORT.equalsIgnoreCase(name)) {
-                    port = value;
                 } else if (ExternalServicesConstants.SMTP_USE_TLS.equalsIgnoreCase(name)) {
                     useTLS = Boolean.parseBoolean(value);
                 } else if (ExternalServicesConstants.SMTP_FROM_EMAIL.equalsIgnoreCase(name)) {
